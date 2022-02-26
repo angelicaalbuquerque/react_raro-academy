@@ -1,0 +1,1 @@
+Neste material complementar, você pode ver o código escrito para representar os casos de usos apresentados em aulas: um deles, demonstrando o comportamento que usuário do browser percebe, ao utilizar a thread principal do browser para renderizar todos os confetes, e o segundo comportamento, onde colocamos um timer (setInterval) do javascript para renderizar este conteúdo.
