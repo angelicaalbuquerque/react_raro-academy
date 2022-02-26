@@ -1,0 +1,84 @@
+# Promises e async/await
+
+## [Callback hell](https://res.cloudinary.com/practicaldev/image/fetch/s--c0aEZX7m--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b8euo2n7twvgh3dbuatd.jpeg)
+
+- Callbacks são a solução mais básica para resolver ordenação de chamadas assíncronas. Porém, é a forma menos legível de implementação.
+- Quando precisamos sincronizar várias chamadas assíncronas, é necessário que diversas funções sejam aninhadas entre si.
+- Para dar manutenção em códigos como este, temos diversos problemas:
+  - legibilidade
+  - dificuldade em adicionar mais uma função na sequência
+  - por vezes, criamos uma situação onde devemos escolher entre criar diversas variáveis _shadowed_, ou ser bem inventivo com nomes de variáveis que têm o mesmo propósito.
+  - blocos que fazem o mesmo trabalho precisam ser repetidos com certa frequência, para tratar todos os callbacks.
+
+```ts
+getUser(1, (error, user) => {
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  console.log(user);
+  getRepositories(user.githubUsername, (error, repositories) => {
+    // bloco identico ao tratamento de erro anterior.
+    // a variável de "error" tem o mesmo nome da variável de "error" definida no escopo superior.
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    // se eu quisesse pegar os commits de todos os repositories, o que eu precisaria fazer?
+    console.log(repositories);
+    getCommits(repositories[0], (error, commits) => {
+      console.log(commits);
+    });
+  });
+});
+```
+
+## Promises
+
+- Promises são uma proposta para resolver os problemas apresentados acima. A ideia da estrutura de promise é que se possa fazer o mesmo trabalho de sincronismo de chamadas assíncronas, mas ao invés de adicionar operações aninhadas, trabalhamos com operações encadeadas.
+
+```ts
+getUser(1)
+  .then((user) => getRepositories(user.githubUsername))
+  .then((repositories) => getCommits(repositories[0]))
+  .then((commits) => console.log(commits))
+  .catch((error) => console.error(error));
+```
+
+- Como o próprio nome diz, uma função "promisificada" retorna uma "promessa" que a operação será resolvida ou rejeitada em algum momento futuro.
+  - Enquanto a promessa de função não for resolvida ou rejeitada, a promise está em estado de `pending`. Uma cadeia de promises fica "paralisada" naquele ponto, até que seja dada uma solução à esta promessa.
+  - Quando a promessa é resolvida, a promise fica em estado de `resolved`. Uma promise `resolved` faz chamada ao método de `then`, encadeado imediatamente à ela.
+  - Quando a promessa é rejeitada, a promise fica em estado de `rejected`. Uma promise `rejected` faz chamada ao método de `catch`, mais próximo, presente na cadeia de chamadas.
+
+![ciclo de vida da promise](https://res.cloudinary.com/practicaldev/image/fetch/s--9RZVd5G6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/p60413nfwvkuezgtzzcx.png)
+
+- caso de estudo: `04-promise-async/src/use-cases/sleep.ts`
+
+## Async/await
+
+- As promises definem uma forma bem mais interessante de resolver chamadas assíncronas, mas ainda tem alguns problemas:
+  - a sintaxe não é efetivamente simples. Ela é muito mais legível, mas ainda assim, tenho uma cadeia de funções isoladas tentando "conversar"
+  - se uma promise anterior resolve um valor que eu preciso em uma promise futura, é necessário ficar criando variáveis globais, sobre o contexto das promises.
+  - ainda não estou escrevendo um código que se assemelha a um código linear, síncrono.
+- O javascript incorporou em sua **sintaxe** o conceito de funções assíncronas
+- Estas funções continuam trabalhando com promises, porém, com uma sintaxe que se aproxima mais de um código síncrono.
+- Funções que permitem operações assíncronas, nesta sintaxe, possuem o modificador `async` em sua assinatura. Basta adicionar este modificador, que imediatamente esta função passa "retornar" uma promise.
+- As chamadas internas desta função que precisam esperar pela resolução de uma `promise` precisam ser anotadas com o modificador `await`.
+- sempre que houver um `reject` dentre as chamadas de promises em formato de async/await, deverá ocorrer um lançamento de erro, que deve ser tratado em um bloco de `catch`
+
+```ts
+// esta função também pode ser assinada como
+// const getUser = async (id: number) => {...}
+async function getGithubUserData() {
+  try {
+    const user = await getUser(1);
+    const repositories = await getRepositories(user.githubUsername);
+    const commits = await getCommits(repositories[0]);
+    console.log(commits);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
