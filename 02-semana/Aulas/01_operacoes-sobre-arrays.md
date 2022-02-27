@@ -343,8 +343,8 @@ toRecord(chavesEValores);
 - Método util para ordenar registros de um array.
 - O método recebe um callback, onde a cada loop, dois registros distintos, `a` e `b` são passados como parâmetros.
 - cada loop deve retornar um valor numérico, com o seguinte padrão.:
-  - `retorno > 0`: o objeto `b` é ordenado antes de `a`
-  - `retorno < 0`: o objeto `a` é ordenado antes de `b`
+  - `retorno > 0`: os valores são invertidos (`b` precede `a`)
+  - `retorno < 0`: os valores são mantidos na sequência original (`a` precede `b`)
   - `retorno === 0`: não altera a ordem dos objetos (`a` é ordenado antes de `b`)
 - O método de `sort` altera o array original. Caso seja necessário manter a estrutura inicial, sugiro a ordenação de uma cópia do array. Uma forma pode ser `[...array].sort(/*...*/)`
 
