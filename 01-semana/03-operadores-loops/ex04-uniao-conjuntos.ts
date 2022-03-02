@@ -9,19 +9,18 @@ function conjuntosUniao() {
   const a = [1, 2, 3, 4, 5, 6];
   const b = [4, 4, 5, 6, 7, 8];
 
-  let numeroDuplicado = false;
+  for (let indexb = 0; indexb < b.length; indexb++) {
+    let numeroDuplicado = false;
 
-  for (let indexb = 0; indexb <= b.length; indexb++) {
-    for (let indexa = 0; indexa <= a.length; indexa++) {
-      if (b[indexb] == a[indexa]) {
+    for (let indexa = 0; indexa < a.length; indexa++) {
+      if (b[indexb] === a[indexa]) {
         numeroDuplicado = true;
+        break;
       }
     }
 
     if (!numeroDuplicado) {
       a[a.length] = b[indexb];
-    } else {
-      numeroDuplicado = false;
     }
   }
   return a;
