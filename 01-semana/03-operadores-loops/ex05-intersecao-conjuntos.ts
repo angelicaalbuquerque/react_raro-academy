@@ -3,13 +3,11 @@
 const a = [1, 2, 3, 4, 5, 6];
 const b = [4, 4, 5, 6, 7, 8];
 
-let conjuntosInter: any = [];
+let conjuntosInter: number[] = [];
 
 a.map((item) => {
-  if (b.indexOf(item) != -1) {
+  if (b.indexOf(item) !== -1) {
     conjuntosInter.push(item);
-  } else {
-    b.push(item);
   }
 });
 
