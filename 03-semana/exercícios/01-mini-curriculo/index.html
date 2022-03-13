@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angélica Albuquerque - Front-End Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+    <script
+    src="https://kit.fontawesome.com/7066be22d4.js"
+    crossorigin="anonymous"
+  ></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <nav class="menu">
+        <ul class="container">
+          <li><a href="#"></i>Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="titulo">
+        <h1 class="site-title">Angélica Albuquerque</h1>
+        <h3 class="site-subtitle">
+          Front-End Developer | UI Designer
+        </h3>
+      </div>
+    </header>
+
+    <section class="sobre" id="sobre">
+      <h2>Sobre</h2>
+      <figure class="container">
+        <img
+          class="avatar"
+          src="https://www.frontangie.dev/assets/perfil.jpg"
+          alt="Foto Angélica"
+        />
+      </figure>
+
+      <div class="texto-sobre container">
+        <p>
+          Sou Front-end Developer, UI Designer e entusiasta de Tecnologia da Informação.
+        </p>
+        <p>
+          Uma das minhas diretrizes é contribuir para um mundo melhor através de códigos acessíveis e otimizar experiências pensando [com empatia, respeito e carinho] em inclusão social e diversidade. Busco incentivar pessoas a entrarem no mundo da tecnologia, pois acredito que ela transforme vidas.
+        </p>
+      </div>
+
+      <div class="formacao container">
+        <h3>Formação</h3>
+
+        <ul>
+          <li><strong>Análise e Desenvolvimento de Sistemas</strong> | Unicarioca (2020)</li>
+          <li><strong>Ciência da Computação</strong> | Unicarioca (2019)</li>
+          <li><strong>Administração</strong> | SENAC (2015)</li>
+        </ul>
+      </div>
+
+      <div class="experiencias container">
+        <h3>Experiências</h3>
+
+        <p>
+          <strong>Desenvolvedora Fullstack | Tribunal de Contas do
+            Estado do Rio de Janeiro</strong> - Desenvolvimento de sistemas; criação e manutenção de aplicações Web, desktop e Web APIs; testes integrados; UI Design; UX Writing; apoio em gestão de projetos. <em>Estágio no período de 05/2019 - 04/2021.</em>            
+        </p>
+        <p>
+          <strong>Analista de Marketing/Designer | Flanci Corretora de Seguros</strong> - Responsável pelo setor de marketing; produção e gestão de material on/off; elaboração de estratégias de marketing; UI designer; UX writer/researcher. <em>Efetivo no período de 06/2016 - 05/2019.</em>     
+        </p>
+        <p>
+          <strong>Desenvolvedora Web (estágio) | Ministério Público do
+            Estado do Rio de Janeiro</strong> - Desenvolvimento de sistemas; criação e manutenção de aplicações Web, desktop e Web APIs; testes integrados; UI Design; UX Writing; apoio em gestão de projetos.<em>Estágio no período de 06/2014 - 05/2016.</em>     
+        </p>
+      </div>
+    </section>
+
+    <section class="servicos" id="servicos">
+      <h2>Serviços</h2>
+
+      <p>
+        Tem algum projeto? Já estou animada com ele! Posso te ajudar com algumas tarefas. 
+      </p>
+
+      <div class="grid  container">
+        <figure>
+          <img
+            class="img-servicos"
+            src="img/html.svg"
+            alt="Desenvolvimento Web"
+          />
+          <figcaption><strong>Desenvolvimento Web</strong></figcaption>
+        </figure>
+        <figure>
+          <img
+            class="img-servicos"
+            src="img/graphic-design.svg"
+            alt=">Design"
+          />
+          <figcaption><strong>Design</strong></figcaption>
+        </figure>
+        <figure>
+          <img class="img-servicos" src="img/blog.svg" alt="Redação" />
+          <figcaption><strong>Redação</strong></figcaption>
+        </figure>
+        <figure>
+          <img
+            class="img-servicos"
+            src="img/loudspeaker.svg"
+            alt="servicos pessoais"
+          />
+          <figcaption><strong>Marketing</strong></Marketing></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="contato" id="contato">
+      <h2>Contato</h2>
+
+      <p>
+        Entre em contato comigo. Ficarei feliz em fazer parte do seu time.
+      </p>
+
+      <div class="grid icons  container">
+        <a target="_blank" href="https://github.com/angelicaalbuquerque">
+          <i class="fab fa-github"></i>
+        </a>
+        <a target="_blank" href="https://twitter.com/frontangie">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/angelica-albuquerque/"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </section>
+
+    <footer class="rodape">
+      <p>
+        <a href="https://www.raroacademy.com.br/" target="_blank">Projeto criado para a Imersão React - Raro Academy | 2022</a>
+        </p>
+    </footer>
+
+    <script>
+      function typeWriter(elemento) {
+        const textoArray = elemento.innerHTML.split("");
+        elemento.innerHTML = "";
+        textoArray.forEach(function(letra, i) {
+       setTimeout(function() {
+        elemento.innerHTML += letra;
+       }, 35 * i)
+
+        });
+      }
+      
+      const texto = document.querySelector('h3');
+      typeWriter(texto);
+    </script>
+  </body>
+</html>
