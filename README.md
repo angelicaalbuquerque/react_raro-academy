@@ -5,7 +5,7 @@
 <p align="center">
 
 <p align="center">
-<!-- <img alt="badge html" src="https://raw.githubusercontent.com/angelicaalbuquerque/badges-and-icons/f96545c39b9ff34534ee166d78e4bcef00de3928/badges/html.svg"> -->
+<img alt="badge html" src="https://raw.githubusercontent.com/angelicaalbuquerque/badges-and-icons/f96545c39b9ff34534ee166d78e4bcef00de3928/badges/html.svg">
 <!-- <img alt="badge sass" src="https://raw.githubusercontent.com/angelicaalbuquerque/badges-and-icons/492c87722a25eca3883de8ee892966c9dd1e86e3/badges/sass.svg"> -->
 <img alt="badge typescript" src="https://raw.githubusercontent.com/angelicaalbuquerque/badges-and-icons/56834a01279853fcf3ce5c7bf058f217fb2be110/badges/typescript.svg">
 <img alt="badge nodejs" src="https://raw.githubusercontent.com/angelicaalbuquerque/badges-and-icons/56834a01279853fcf3ce5c7bf058f217fb2be110/badges/node.svg">
@@ -32,6 +32,18 @@ Neste curso serão passados os fundamentos da programação front-end e como uti
 ### Grade do curso
 
 <details>
+  <summary>Dominando Typescript</summary>
+
+- Typescript - Funções (Promises)
+- Typescript - Callbacks
+- Typescript - Arrays (Map, Filter, Reducer, ForEach)
+- Typescript - Objetos (Rest Operator, Destructuring)
+- Typescript - Operadores
+- Typescript - Booleans / Ternários
+- Typescript - ESModules
+</details>
+
+<details>
   <summary>Introdução a programação web</summary>
 
 - HTTP
@@ -45,26 +57,12 @@ Neste curso serão passados os fundamentos da programação front-end e como uti
 </details>
 
 <details>
-  <summary>
-  Ciclo de vida do React e hooks</summary>
+  <summary>Primeiros passos com React</summary>
 
-- React - JSX
-- React - Estados ""antigos"" no react
-- React - Lifecycle
-- React - PropTypes e tipagem no Typescript
-- React - API de Hooks
-</details>
-
-<details>
-  <summary>Gerenciamento de estados globais</summary>
-
-- React - Gerenciamento de estados globais (context API)
-</details>
-
-<details>
-  <summary>Rotas e consumo de APIs</summary>
-
-- React - API's de rotas (react-router-dom)
+- React - História / Motivação
+- React - Árvore de elementos (React.CreateElement, DOOM)
+- React - Boirplates / Compliadores (Webpack, CRA, babel)
+- React - Class Components
 
 </details>
 
@@ -79,25 +77,27 @@ Neste curso serão passados os fundamentos da programação front-end e como uti
 </details>
 
 <details>
-  <summary>Primeiros passos com React</summary>
+  <summary>
+  Ciclo de vida do React e hooks</summary>
 
-- React - História / Motivação
-- React - Árvore de elementos (React.CreateElement, DOOM)
-- React - Boirplates / Compliadores (Webpack, CRA, babel)
-- React - Class Components
+- React - JSX
+- React - Estados ""antigos"" no react
+- React - Lifecycle
+- React - PropTypes e tipagem no Typescript
+- React - API de Hooks
+</details>
+
+<details>
+  <summary>Rotas e consumo de APIs</summary>
+
+- React - API's de rotas (react-router-dom)
 
 </details>
 
 <details>
-  <summary>Dominando Typescript</summary>
+  <summary>Gerenciamento de estados globais</summary>
 
-- Typescript - Funções (Promises)
-- Typescript - Callbacks
-- Typescript - Arrays (Map, Filter, Reducer, ForEach)
-- Typescript - Objetos (Rest Operator, Destructuring)
-- Typescript - Operadores
-- Typescript - Booleans / Ternários
-- Typescript - ESModules
+- React - Gerenciamento de estados globais (context API)
 </details>
 
 ## 📬 Entre em contato!
